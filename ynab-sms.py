@@ -1,6 +1,5 @@
 from twilio.rest import Client
 import requests
-import arrow
 import json
 
 
@@ -38,8 +37,8 @@ def sendSMS(who, message):
 	print('  ' + message)
 	print()
 
-    # twilio = Client(settings['twilio']['sid'], settings['twilio']['token'])
-    # twilio.messages.create(to=who, from_=settings['twilio']['number'], body=message)
+    twilio = Client(settings['twilio']['sid'], settings['twilio']['token'])
+    twilio.messages.create(to=who, from_=settings['twilio']['number'], body=message)
 
 
 def processTransaction(id, doc, balance):
@@ -112,7 +111,7 @@ for t in transactions:
 		for s in t['subtransactions']:
 			id = s['id']			
 			doc = {}
-			doc['date'] = arrow.get(t['date']).replace(tzinfo='US/Central')
+			doc['date'] = t['date']
 			doc['amount'] = s['amount'] / 1000.0
 			if doc['amount'] < 0:
 				doc['outflow'] = doc['amount'] * -1
@@ -149,7 +148,7 @@ for t in transactions:
 	else:
 		id = t['id']
 		doc = {}
-		doc['date'] = arrow.get(t['date']).replace(tzinfo='US/Central')
+		doc['date'] = t['date']
 		doc['amount'] = t['amount'] / 1000.0
 		if doc['amount'] < 0:
 			doc['outflow'] = doc['amount'] * -1
