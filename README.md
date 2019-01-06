@@ -4,7 +4,7 @@ Do you use YNAB with mutliple people? use `ynab-sms.py` to send text messages to
 ## Install Requirements
 The script requires python 3. Install the required python packages with `pip install -r requirements.txt`
 ## Configure
-Copy `settings.json.example` to `settings.json` and then modify with your settings. You'll need a Personal Access Token from your [YNAB Develop Settings](https://app.youneedabudget.com/settings/developer), and a [Twilio](https://www.twilio.com/sms) Programmable SMS account.
+Copy `settings.json.example` to `settings.json` and then modify with your settings. You'll need a Personal Access Token from your [YNAB Developer Settings](https://app.youneedabudget.com/settings/developer), and a [Twilio](https://www.twilio.com/sms) Programmable SMS account.
 #### Sample Config
 The configuration is broken up into three sections.
 
@@ -42,7 +42,7 @@ Finally, in the `users` section add each person you want to get SMS alerts, and 
 }
 ```
 ## Run
-Once configured, run `python3 ynab-sms.py` using cron or some other task scheduler as often as you want. Keep in mind the YNAB API call limits, which are currently 200 calls per hour.
+Once configured, run `python3 ynab-sms.py` using cron or some other task scheduler as often as you want. Keep in mind the YNAB API call limits, which are currently 200 calls per hour, and the script makes three calls per run.
 
 # Improvements
 Currently this script grabs all possible transactions. A future version should use the delta api instead. The payee list should be cached as well.
