@@ -1,0 +1,23 @@
+{
+    "ynab": {
+        "budget": "h1347489-2b23-6dcf-feb9-6204ba34a4fe",
+        "token": "44b913a04a2f3c898d498a22b34a236205664ba97d68585446dcff6c04feb6"
+    },
+    "twilio": {
+        "sid": "ee5a1a322e6415d68cAC4fef0bf61899ed",
+        "token": "5eb13d609b7edf2fd7b4c48ceef81923",
+        "number": "+12135552560"
+    },
+    "users": [
+        {            
+            "name": "Alice",
+            "number": "+16615557189",
+            "flag": "purple"
+        },
+        {            
+            "name": "Bob",
+            "number": "+13235557167",
+            "flag": "blue"
+        }
+    ]
+}

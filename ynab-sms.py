@@ -37,8 +37,8 @@ def sendSMS(who, message):
 	print('  ' + message)
 	print()
 
-    twilio = Client(settings['twilio']['sid'], settings['twilio']['token'])
-    twilio.messages.create(to=who, from_=settings['twilio']['number'], body=message)
+	twilio = Client(settings['twilio']['sid'], settings['twilio']['token'])
+	twilio.messages.create(to=who, from_=settings['twilio']['number'], body=message)
 
 
 def processTransaction(id, doc, balance):
