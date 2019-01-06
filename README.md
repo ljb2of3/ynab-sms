@@ -8,7 +8,9 @@ Copy `settings.json.example` to `settings.json` and then modify with your settin
 #### Sample Config
 The configuration is broken up into three sections.
 
-In the `ynab` section you'll need to fill in your budget ID, which can be found in the url bar when you're editing your budget: `https://app.youneedabudget.com/THIS IS YOUR BUDGET ID/budget`
+In the `ynab` section you'll need to fill in your budget ID, which can be found in the url bar when you're editing your budget: `https://app.youneedabudget.com/THIS IS YOUR BUDGET ID/budget`, as well as a Personal Access Token from your YNAB Developer Settings.
+
+(The information below is all random)
 ```json
     "ynab": {
         "budget": "h1347489-2b23-6dcf-feb9-6204ba34a4fe",
