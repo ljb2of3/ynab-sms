@@ -44,5 +44,7 @@ Finally, in the `users` section add each person you want to get SMS alerts, and 
 ## Run
 Once configured, run `python3 ynab-sms.py` using cron or some other task scheduler as often as you want. Keep in mind the YNAB API call limits, which are currently 200 calls per hour, and the script makes three calls per run.
 
+The script writes a couple json files to the local directory to keep track of past data, so make sure it has write permissions.
+
 # Improvements
 Currently this script grabs all possible transactions. A future version should use the delta api instead. The payee list should be cached as well.
